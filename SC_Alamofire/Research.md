@@ -21,6 +21,7 @@
   - [ ] [Alamofire Tutorial: Getting Started](https://www.raywenderlich.com/147086/alamofire-tutorial-getting-started-2)
   - [ ] [URLSession Tutorial: Getting Started](https://www.raywenderlich.com/158106/urlsession-tutorial-getting-started)
   - [ ] [Video - Networking with URLSession](https://videos.raywenderlich.com/courses/93-networking-with-urlsession)
+  - [ ] [CocoaPods Tutorial for Swift: Getting Started](https://www.raywenderlich.com/156971/cocoapods-tutorial-swift-getting-started)
 
 * [ ] Review other blogs/sites to see what they wrote about the subject
   - [ ] [Appcoda - The Absolute Guide to Networking in Swift with Alamofire](https://www.appcoda.com/alamofire-beginner-guide/)
