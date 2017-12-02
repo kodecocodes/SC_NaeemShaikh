@@ -33,18 +33,12 @@
  @UIApplicationMain
  class AppDelegate: UIResponder, UIApplicationDelegate {
   
-  var backgroundSessionCompletionHandler: (() -> Void)?
   var window: UIWindow?
   let tintColor =  UIColor(red: 242/255, green: 71/255, blue: 63/255, alpha: 1)
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     customizeAppearance()
     return true
-  }
-  
-  func application(_ application: UIApplication, handleEventsForBackgroundURLSession
-    identifier: String, completionHandler: @escaping () -> Void) {
-    backgroundSessionCompletionHandler = completionHandler
   }
   
   // MARK - App Theme Customization

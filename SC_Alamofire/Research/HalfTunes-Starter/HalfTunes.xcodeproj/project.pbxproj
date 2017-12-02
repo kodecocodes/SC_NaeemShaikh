@@ -18,8 +18,6 @@
 		D9EF8FEA1B53FD6900EFC4B6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF8FE81B53FD6900EFC4B6 /* SearchViewController.swift */; };
 		D9EF8FF11B53FDCB00EFC4B6 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF8FED1B53FDCB00EFC4B6 /* TrackCell.swift */; };
 		D9EF8FF21B53FDCB00EFC4B6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF8FEE1B53FDCB00EFC4B6 /* Track.swift */; };
-		DF322D4C1FD3059000C266F8 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF322D4B1FD3059000C266F8 /* Download.swift */; };
-		DF322D4E1FD306B000C266F8 /* SearchVC+URLSessionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF322D4D1FD306B000C266F8 /* SearchVC+URLSessionDelegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +34,6 @@
 		D9EF8FE81B53FD6900EFC4B6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D9EF8FED1B53FDCB00EFC4B6 /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		D9EF8FEE1B53FDCB00EFC4B6 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		DF322D4B1FD3059000C266F8 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
-		DF322D4D1FD306B000C266F8 /* SearchVC+URLSessionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+URLSessionDelegates.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +52,6 @@
 			children = (
 				D9EF8FE81B53FD6900EFC4B6 /* SearchViewController.swift */,
 				4051C2DD1E078EE00031FE46 /* SearchVC+SearchBarDelegate.swift */,
-				DF322D4D1FD306B000C266F8 /* SearchVC+URLSessionDelegates.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -82,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				D9EF8FEE1B53FDCB00EFC4B6 /* Track.swift */,
-				DF322D4B1FD3059000C266F8 /* Download.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -162,9 +156,8 @@
 				TargetAttributes = {
 					D9EF8FC01B53FD2100EFC4B6 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = HQX3323RTU;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -204,9 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF322D4C1FD3059000C266F8 /* Download.swift in Sources */,
 				D9EF8FEA1B53FD6900EFC4B6 /* SearchViewController.swift in Sources */,
-				DF322D4E1FD306B000C266F8 /* SearchVC+URLSessionDelegates.swift in Sources */,
 				409BF3EF1EB80BE2004B06AD /* DownloadService.swift in Sources */,
 				D9EF8FC71B53FD2100EFC4B6 /* AppDelegate.swift in Sources */,
 				18C0C62A1DF4858D00393D33 /* StoryboardSupport.swift in Sources */,
@@ -342,12 +333,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HQX3323RTU;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HalfTunes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.HalfTunes1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.HalfTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
@@ -359,12 +349,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HQX3323RTU;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HalfTunes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.HalfTunes1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.HalfTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;

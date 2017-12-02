@@ -13,6 +13,7 @@
 
 * [ ] Read any official Apple documentation/sample projects on the subject
   - [ ] [Apple - URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
+  - [ ] [Apple - URLSessionConfiguration](https://developer.apple.com/documentation/foundation/urlsessionconfiguration)
   - [ ] [Alamofire - GitHub](https://github.com/Alamofire/Alamofire)
   - [ ] [Alamofire - Complete Documentation](https://alamofire.github.io/Alamofire)
   - [ ] [Alamofire - Cocoadocs](http://cocoadocs.org/docsets/Alamofire/1.2.3/)
