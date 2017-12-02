@@ -146,7 +146,7 @@ extension ViewController {
           upload.validate()
           upload.responseJSON { response in
             guard response.result.isSuccess else {
-              print("Error while uploading file: \(response.result.error)")
+              print("Error while uploading file: \(String(describing: response.result.error))")
               completion([String](), [PhotoColor]())
               return
             }
@@ -180,7 +180,7 @@ extension ViewController {
     .responseJSON { response in
 
       guard response.result.isSuccess else {
-        print("Error while fetching tags: \(response.result.error)")
+        print("Error while fetching tags: \(String(describing: response.result.error))")
         completion([String]())
         return
       }
@@ -207,7 +207,7 @@ extension ViewController {
     .responseJSON { response in
 
       guard response.result.isSuccess else {
-        print("Error while fetching colors: \(response.result.error)")
+        print("Error while fetching colors: \(String(describing: response.result.error))")
         completion([PhotoColor]())
         return
       }
