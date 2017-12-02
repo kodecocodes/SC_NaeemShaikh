@@ -12,14 +12,17 @@
 * [ ] If you’re updating a course, watch the original course and go through all the challenges
 
 * [ ] Read any official Apple documentation/sample projects on the subject
-  - [ ] [Apple Doc - URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
+  - [ ] [Apple - URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
+  - [ ] [Apple - URLSessionConfiguration](https://developer.apple.com/documentation/foundation/urlsessionconfiguration)
   - [ ] [Alamofire - GitHub](https://github.com/Alamofire/Alamofire)
   - [ ] [Alamofire - Complete Documentation](https://alamofire.github.io/Alamofire)
   - [ ] [Alamofire - Cocoadocs](http://cocoadocs.org/docsets/Alamofire/1.2.3/)
 
 * [ ] Review any tutorials or books on raywenderlich.com related to the subject
-  - [ ] [Alamofire Tutorial: Getting Started](https://www.raywenderlich.com/147086/alamofire-tutorial-getting-started-2)
+  - [x] [Alamofire Tutorial: Getting Started](https://www.raywenderlich.com/147086/alamofire-tutorial-getting-started-2)
+    - [x] [Imagga API](https://docs.imagga.com)
   - [ ] [URLSession Tutorial: Getting Started](https://www.raywenderlich.com/158106/urlsession-tutorial-getting-started)
+    - [ ] [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
   - [ ] [Video - Networking with URLSession](https://videos.raywenderlich.com/courses/93-networking-with-urlsession)
   - [ ] [CocoaPods Tutorial for Swift: Getting Started](https://www.raywenderlich.com/156971/cocoapods-tutorial-swift-getting-started)
 
