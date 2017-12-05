@@ -8,23 +8,22 @@
   - [ ] [WWDC14_707_What's New in Foundation Networking](https://developer.apple.com/videos/play/wwdc2014/707/)
   - [ ] [WWDC15_711_Networking with NSURLSession](https://developer.apple.com/videos/play/wwdc2015-711/)
   - [ ] [WWDC16_711_NSURLSession: New Features and Best Practices](https://developer.apple.com/videos/play/wwdc2016/711/)
+  - [ ] [WWDC17_707_Advances in Networking, Part 1](https://developer.apple.com/videos/play/wwdc2017/707/)
+  - [ ] [WWDC17_709_Advances in Networking, Part 2](https://developer.apple.com/videos/play/wwdc2017/709/)
 
 * [ ] If you’re updating a course, watch the original course and go through all the challenges
 
 * [ ] Read any official Apple documentation/sample projects on the subject
   - [ ] [Apple - URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
-  - [ ] [Apple - URLSessionConfiguration](https://developer.apple.com/documentation/foundation/urlsessionconfiguration)
-  - [ ] [Alamofire - GitHub](https://github.com/Alamofire/Alamofire)
-  - [ ] [Alamofire - Complete Documentation](https://alamofire.github.io/Alamofire)
-  - [ ] [Alamofire - Cocoadocs](http://cocoadocs.org/docsets/Alamofire/1.2.3/)
+  - [x] [Alamofire - GitHub](https://github.com/Alamofire/Alamofire)
+  - [x] [Alamofire - Complete Documentation](https://alamofire.github.io/Alamofire)
 
 * [ ] Review any tutorials or books on raywenderlich.com related to the subject
   - [x] [Alamofire Tutorial: Getting Started](https://www.raywenderlich.com/147086/alamofire-tutorial-getting-started-2)
     - [x] [Imagga API](https://docs.imagga.com)
-  - [ ] [URLSession Tutorial: Getting Started](https://www.raywenderlich.com/158106/urlsession-tutorial-getting-started)
-    - [ ] [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
+  - [x] [URLSession Tutorial: Getting Started](https://www.raywenderlich.com/158106/urlsession-tutorial-getting-started)
+    - [x] [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
   - [ ] [Video - Networking with URLSession](https://videos.raywenderlich.com/courses/93-networking-with-urlsession)
-  - [ ] [CocoaPods Tutorial for Swift: Getting Started](https://www.raywenderlich.com/156971/cocoapods-tutorial-swift-getting-started)
 
 * [ ] Review other blogs/sites to see what they wrote about the subject
   - [ ] [Appcoda - The Absolute Guide to Networking in Swift with Alamofire](https://www.appcoda.com/alamofire-beginner-guide/)
@@ -56,6 +55,7 @@
   - [ ] [Medium - Alamofire 4 — Multipart file upload with Swift 3](https://medium.com/theappspace/alamofire-4-multipart-file-upload-with-swift-3-174df1ef84c1)
   - [ ] [Medium - Thoughts On AlamoFire](https://medium.com/the-traveled-ios-developers-guide/thoughts-on-alamofire-55a52a3d3d57)
   - [ ] [Gargoylesoft - ALAMOFIRE FOR SWIFT 3](https://www.gargoylesoft.com/blog/alamofire-for-swift-3/)
+  - [x] [URLSession Waiting For Connectivity](https://useyourloaf.com/blog/urlsession-waiting-for-connectivity/)
 
 * [ ] Review any books related to the subject
 
