@@ -37,10 +37,6 @@ class ViewController: UIViewController {
   @IBOutlet var progressView: UIProgressView!
   @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
 
-  // MARK: - Properties
-  //fileprivate var tags: [String]?
-  //fileprivate var colors: [PhotoColor]?
-
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
