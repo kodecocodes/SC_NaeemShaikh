@@ -1,32 +1,30 @@
-/**
- * Copyright (c) 2017 Razeware LLC
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
- * distribute, sublicense, create a derivative work, and/or sell copies of the
- * Software in any work that is designed, intended, or marketed for pedagogical or
- * instructional purposes related to programming, coding, application development,
- * or information technology.  Permission for such use, copying, modification,
- * merger, publication, distribution, sublicensing, creation of derivative works,
- * or sale is expressly withheld.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
+/// Copyright (c) 2017 Razeware LLC
+///
+/// Permission is hereby granted, free of charge, to any person obtaining a copy
+/// of this software and associated documentation files (the "Software"), to deal
+/// in the Software without restriction, including without limitation the rights
+/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+/// copies of the Software, and to permit persons to whom the Software is
+/// furnished to do so, subject to the following conditions:
+///
+/// The above copyright notice and this permission notice shall be included in
+/// all copies or substantial portions of the Software.
+///
+/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+/// distribute, sublicense, create a derivative work, and/or sell copies of the
+/// Software in any work that is designed, intended, or marketed for pedagogical or
+/// instructional purposes related to programming, coding, application development,
+/// or information technology.  Permission for such use, copying, modification,
+/// merger, publication, distribution, sublicensing, creation of derivative works,
+/// or sale is expressly withheld.
+///
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+/// THE SOFTWARE.
 
 import UIKit
 import Alamofire
@@ -38,10 +36,6 @@ class ViewController: UIViewController {
   @IBOutlet var imageView: UIImageView!
   @IBOutlet var progressView: UIProgressView!
   @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
-
-  // MARK: - Properties
-  //fileprivate var tags: [String]?
-  //fileprivate var colors: [PhotoColor]?
 
   // MARK: - View Life Cycle
   override func viewDidLoad() {
@@ -94,14 +88,22 @@ extension ViewController: UIImagePickerControllerDelegate {
 
     upload(
       image: image,
-      progressCompletion: { [unowned self] percent in
-        self.progressView.setProgress(percent, animated: true)
+      progressCompletion: { [weak self] percent in
+        guard let strongSelf = self else {
+          return
+        }
+        
+        strongSelf.progressView.setProgress(percent, animated: true)
       },
-      completion: { result in
-        self.takePictureButton.isHidden = false
-        self.progressView.isHidden = true
-        self.activityIndicatorView.stopAnimating()
-        self.imageView.image = nil
+      completion: { [weak self] result in
+        guard let strongSelf = self else {
+          return
+        }
+
+        strongSelf.takePictureButton.isHidden = false
+        strongSelf.progressView.isHidden = true
+        strongSelf.activityIndicatorView.stopAnimating()
+        strongSelf.imageView.image = nil
     })
 
     dismiss(animated: true)
@@ -131,7 +133,7 @@ extension ViewController {
                                  mimeType: "image/jpeg")
       },
       to: "http://api.imagga.com/v1/content",
-      headers: ["Authorization": "Basic YWNjX2E3MjAyMDgwODdhZTZiODphZWY5N2EyZjM3NzExYmE2ZDhhZjFmMDMzOTFkMGJmYw=="],
+      headers: ["Authorization": "Basic xxx"],
       encodingCompletion: { encodingResult in
         switch encodingResult {
         case .success(let upload, _, _):
