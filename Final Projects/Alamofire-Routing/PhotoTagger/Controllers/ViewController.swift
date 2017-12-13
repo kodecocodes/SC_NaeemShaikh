@@ -208,9 +208,9 @@ extension ViewController {
           return
       }
 
-      let tags = tagsAndConfidences.flatMap({ dict in
+      let tags = tagsAndConfidences.flatMap { dict in
         return dict["tag"] as? String
-      })
+      }
       
       completion(tags)
     }
@@ -236,7 +236,7 @@ extension ViewController {
           return
       }
 
-      let photoColors = imageColors.flatMap({ (dict) -> PhotoColor? in
+      let photoColors = imageColors.flatMap { dict -> PhotoColor? in
         guard let r = dict["r"] as? String,
           let g = dict["g"] as? String,
           let b = dict["b"] as? String,
@@ -245,7 +245,7 @@ extension ViewController {
         }
 
         return PhotoColor(red: Int(r), green: Int(g), blue: Int(b), colorName: closestPaletteColor)
-      })
+      }
 
       completion(photoColors)
     }
