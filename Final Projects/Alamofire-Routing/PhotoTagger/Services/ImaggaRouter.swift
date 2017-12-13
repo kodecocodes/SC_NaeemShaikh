@@ -31,7 +31,7 @@ import Alamofire
 
 public enum ImaggaRouter: URLRequestConvertible {
   static let baseURLPath = "http://api.imagga.com/v1"
-  static let authenticationToken = "Basic YWNjX2E3MjAyMDgwODdhZTZiODphZWY5N2EyZjM3NzExYmE2ZDhhZjFmMDMzOTFkMGJmYw=="
+  static let authenticationToken = "Basic xxx"
   
   case content
   case tags(String)

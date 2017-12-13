@@ -129,7 +129,7 @@ extension ViewController {
                                  mimeType: "image/jpeg")
       },
       to: "http://api.imagga.com/v1/content",
-      headers: ["Authorization": "Basic YWNjX2E3MjAyMDgwODdhZTZiODphZWY5N2EyZjM3NzExYmE2ZDhhZjFmMDMzOTFkMGJmYw=="],
+      headers: ["Authorization": "Basic xxx"],
       encodingCompletion: { encodingResult in
         switch encodingResult {
         case .success(let upload, _, _):
