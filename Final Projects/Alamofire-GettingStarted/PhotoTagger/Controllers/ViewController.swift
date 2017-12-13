@@ -88,14 +88,22 @@ extension ViewController: UIImagePickerControllerDelegate {
 
     upload(
       image: image,
-      progressCompletion: { [unowned self] percent in
-        self.progressView.setProgress(percent, animated: true)
+      progressCompletion: { [weak self] percent in
+        guard let strongSelf = self else {
+          return
+        }
+        
+        strongSelf.progressView.setProgress(percent, animated: true)
       },
-      completion: { result in
-        self.takePictureButton.isHidden = false
-        self.progressView.isHidden = true
-        self.activityIndicatorView.stopAnimating()
-        self.imageView.image = nil
+      completion: { [weak self] result in
+        guard let strongSelf = self else {
+          return
+        }
+
+        strongSelf.takePictureButton.isHidden = false
+        strongSelf.progressView.isHidden = true
+        strongSelf.activityIndicatorView.stopAnimating()
+        strongSelf.imageView.image = nil
     })
 
     dismiss(animated: true)
