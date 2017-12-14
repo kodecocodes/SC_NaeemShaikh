@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fVk-xd-rDT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Tagger-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoTagger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1eT-AI-PMh">
+                                <rect key="frame" x="-4" y="64" width="383" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-Jh-Iqx">
+                                <rect key="frame" x="135" y="314" width="105" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qgx-DW-2wL"/>
+                                </connections>
+                            </button>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PUb-0z-pvg">
+                                <rect key="frame" x="16" y="565" width="343" height="2"/>
+                            </progressView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NeE-gc-BWr">
+                                <rect key="frame" x="169" y="466" width="37" height="37"/>
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NeE-gc-BWr" firstAttribute="centerX" secondItem="DBg-5u-YiV" secondAttribute="centerX" id="0Np-W2-7G7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1eT-AI-PMh" secondAttribute="trailing" constant="-20" id="0gX-KZ-VI6"/>
+                            <constraint firstItem="DBg-5u-YiV" firstAttribute="bottom" secondItem="1eT-AI-PMh" secondAttribute="bottom" id="2P0-CF-Iut"/>
+                            <constraint firstItem="1eT-AI-PMh" firstAttribute="top" secondItem="DBg-5u-YiV" secondAttribute="top" id="6mG-FU-PkN"/>
+                            <constraint firstItem="PUb-0z-pvg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ap9-Fn-1fK"/>
+                            <constraint firstItem="DBg-5u-YiV" firstAttribute="bottom" secondItem="PUb-0z-pvg" secondAttribute="bottom" constant="100" id="Hlz-jA-J7c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PUb-0z-pvg" secondAttribute="trailing" id="R7n-7M-w8i"/>
+                            <constraint firstItem="uYv-Jh-Iqx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gyl-b0-YoB"/>
+                            <constraint firstItem="PUb-0z-pvg" firstAttribute="top" secondItem="NeE-gc-BWr" secondAttribute="bottom" constant="62" id="qOu-0w-Vx3"/>
+                            <constraint firstItem="uYv-Jh-Iqx" firstAttribute="centerX" secondItem="DBg-5u-YiV" secondAttribute="centerX" id="sE2-sR-NOR"/>
+                            <constraint firstItem="1eT-AI-PMh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="sTZ-Dh-P3R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DBg-5u-YiV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo Tagger" id="LD1-n9-pNQ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Uet-es-1kd"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="NeE-gc-BWr" id="2k1-dB-zOf"/>
+                        <outlet property="imageView" destination="1eT-AI-PMh" id="W0k-cf-TWi"/>
+                        <outlet property="progressView" destination="PUb-0z-pvg" id="mLf-qA-DcA"/>
+                        <outlet property="takePictureButton" destination="uYv-Jh-Iqx" id="dG3-4z-sPm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320" y="428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JFv-QU-OQ9">
+            <objects>
+                <navigationController id="fVk-xd-rDT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Bh-Tm-8B3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2m5-Vx-Hz0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vJa-mD-MN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-469" y="429"/>
+        </scene>
+    </scenes>
+</document>
