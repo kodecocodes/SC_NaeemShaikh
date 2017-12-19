@@ -80,10 +80,19 @@ extension ViewController: UIImagePickerControllerDelegate {
 
     imageView.image = image
     
+    takePictureButton.isHidden = true
+    progressView.progress = 0.0
+    progressView.isHidden = false
+    activityIndicatorView.startAnimating()
+    
     dismiss(animated: true)
   }
 }
 
 // MARK: - UINavigationControllerDelegate
 extension ViewController: UINavigationControllerDelegate {
+}
+
+// MARK: - Networking calls
+extension ViewController {
 }

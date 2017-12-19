@@ -27,6 +27,8 @@
 /// THE SOFTWARE.
 
 import UIKit
+// 1
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -80,6 +82,28 @@ extension ViewController: UIImagePickerControllerDelegate {
 
     imageView.image = image
     
+    takePictureButton.isHidden = true
+    progressView.progress = 0.0
+    progressView.isHidden = false
+    activityIndicatorView.startAnimating()
+    
+    // 4
+    //upload(image: <#T##UIImage#>, progressCompletion: <#T##(Float) -> Void#>, completion: <#T##(Bool) -> Void#>)
+    
+    // 5
+    upload(
+      image: image,
+      progressCompletion: { [weak self] percent in
+        guard let strongSelf = self else {
+          return
+        }
+      },
+      completion: { [weak self] result in
+        guard let strongSelf = self else {
+          return
+        }
+    })
+    
     dismiss(animated: true)
   }
 }
@@ -87,3 +111,22 @@ extension ViewController: UIImagePickerControllerDelegate {
 // MARK: - UINavigationControllerDelegate
 extension ViewController: UINavigationControllerDelegate {
 }
+
+// MARK: - Networking calls
+extension ViewController {
+
+  // 2
+  func upload(image: UIImage,
+              progressCompletion: (_ percent: Float) -> Void,
+              completion: (_ result: Bool) -> Void) {
+    
+    // 3
+    guard let imageData = UIImageJPEGRepresentation(image, 0.5) else {
+      print("Could not get JPEG representation of UIImage")
+      return
+    }
+    
+  }
+}
+
+
