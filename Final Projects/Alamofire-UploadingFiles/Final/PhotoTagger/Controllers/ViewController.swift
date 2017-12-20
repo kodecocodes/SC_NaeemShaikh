@@ -119,7 +119,7 @@ extension ViewController {
 
   func upload(image: UIImage,
               progressCompletion: @escaping (_ percent: Float) -> Void,
-              completion: @escaping (_ result: [String]) -> Void) {
+              completion: @escaping (_ result: Bool) -> Void) {
     guard let imageData = UIImageJPEGRepresentation(image, 0.5) else {
       print("Could not get JPEG representation of UIImage")
       return
@@ -144,7 +144,7 @@ extension ViewController {
           upload.responseJSON { response in
             guard response.result.isSuccess else {
               print("Error while uploading file: \(String(describing: response.result.error))")
-              completion([String]())
+              completion(false)
               return
             }
 
@@ -153,12 +153,12 @@ extension ViewController {
               let firstFile = uploadedFiles.first as? [String: Any],
               let firstFileID = firstFile["id"] as? String else {
                 print("Invalid information received from service")
-                completion([String]())
+                completion(false)
                 return
             }
 
             print("Content uploaded with ID: \(firstFileID)")
-            completion([String]())
+            completion(true)
           }
         case .failure(let encodingError):
           print(encodingError)
