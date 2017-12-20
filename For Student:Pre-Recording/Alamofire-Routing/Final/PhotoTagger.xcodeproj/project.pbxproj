@@ -16,6 +16,7 @@
 		DFFD60C11FD6C0DF008D9DF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFD60BD1FD6C0DF008D9DF7 /* ViewController.swift */; };
 		DFFD60C21FD6C0DF008D9DF7 /* TagsColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFD60BE1FD6C0DF008D9DF7 /* TagsColorsViewController.swift */; };
 		DFFD60C41FD6C0EC008D9DF7 /* PhotoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFD60C31FD6C0EC008D9DF7 /* PhotoColor.swift */; };
+		DFFD60C81FD6C241008D9DF7 /* ImaggaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFD60C71FD6C241008D9DF7 /* ImaggaRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		DFFD60BD1FD6C0DF008D9DF7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DFFD60BE1FD6C0DF008D9DF7 /* TagsColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsColorsViewController.swift; sourceTree = "<group>"; };
 		DFFD60C31FD6C0EC008D9DF7 /* PhotoColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoColor.swift; sourceTree = "<group>"; };
+		DFFD60C71FD6C241008D9DF7 /* ImaggaRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImaggaRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,17 +93,10 @@
 				DFFD60A71FD6BE69008D9DF7 /* Controllers */,
 				DFFD60A81FD6BF3C008D9DF7 /* Models */,
 				DFFD60A91FD6BF4C008D9DF7 /* Other */,
-				DFDCF4931FEAC78600DD96B3 /* Services */,
+				DFFD60C61FD6C21C008D9DF7 /* Services */,
 				DFFD60AA1FD6BF67008D9DF7 /* Storyboards */,
 			);
 			path = PhotoTagger;
-			sourceTree = "<group>";
-		};
-		DFDCF4931FEAC78600DD96B3 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		DFFD60A61FD6BE37008D9DF7 /* Assets */ = {
@@ -147,6 +142,14 @@
 				D2A5F2151F4A924B005CD714 /* LaunchScreen.xib */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DFFD60C61FD6C21C008D9DF7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DFFD60C71FD6C241008D9DF7 /* ImaggaRouter.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +284,7 @@
 				DFFD60C01FD6C0DF008D9DF7 /* TagsColorTableData.swift in Sources */,
 				DFFD60C21FD6C0DF008D9DF7 /* TagsColorsViewController.swift in Sources */,
 				DFFD60BF1FD6C0DF008D9DF7 /* TagsColorsTableViewController.swift in Sources */,
+				DFFD60C81FD6C241008D9DF7 /* ImaggaRouter.swift in Sources */,
 				DFFD60C11FD6C0DF008D9DF7 /* ViewController.swift in Sources */,
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,
 			);

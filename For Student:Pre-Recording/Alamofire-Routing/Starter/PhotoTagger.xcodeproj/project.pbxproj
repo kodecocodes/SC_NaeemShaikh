@@ -10,6 +10,7 @@
 		CCD7FFD4580359BD12D3E0AC /* Pods_PhotoTagger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF0B0CAF04468E7DEF604B1 /* Pods_PhotoTagger.framework */; };
 		D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F20A1F4A9144005CD714 /* Assets.xcassets */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
+		DFDCF4951FEACA5400DD96B3 /* ImaggaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCF4941FEACA5400DD96B3 /* ImaggaRouter.swift */; };
 		DFFD60AB1FD6BF94008D9DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		DFFD60BF1FD6C0DF008D9DF7 /* TagsColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFD60BB1FD6C0DF008D9DF7 /* TagsColorsTableViewController.swift */; };
 		DFFD60C01FD6C0DF008D9DF7 /* TagsColorTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFD60BC1FD6C0DF008D9DF7 /* TagsColorTableData.swift */; };
@@ -28,6 +29,7 @@
 		D2A5F20F1F4A9144005CD714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2A5F2151F4A924B005CD714 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DFDCF4941FEACA5400DD96B3 /* ImaggaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaggaRouter.swift; sourceTree = "<group>"; };
 		DFFD60BB1FD6C0DF008D9DF7 /* TagsColorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsColorsTableViewController.swift; sourceTree = "<group>"; };
 		DFFD60BC1FD6C0DF008D9DF7 /* TagsColorTableData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsColorTableData.swift; sourceTree = "<group>"; };
 		DFFD60BD1FD6C0DF008D9DF7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		DFDCF4931FEAC78600DD96B3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DFDCF4941FEACA5400DD96B3 /* ImaggaRouter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				DFFD60C01FD6C0DF008D9DF7 /* TagsColorTableData.swift in Sources */,
 				DFFD60C21FD6C0DF008D9DF7 /* TagsColorsViewController.swift in Sources */,
 				DFFD60BF1FD6C0DF008D9DF7 /* TagsColorsTableViewController.swift in Sources */,
+				DFDCF4951FEACA5400DD96B3 /* ImaggaRouter.swift in Sources */,
 				DFFD60C11FD6C0DF008D9DF7 /* ViewController.swift in Sources */,
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,
 			);
