@@ -58,7 +58,7 @@ func upload(image: UIImage,
 
 For this screencast, we are using a third-party image upload service called **Imagga**.
 
-You’ll need to create a free developer account with **Imagga**, to get authorization header, which needs to be included in each HTTP request so that only people with an account can use their services.
+You’ll need to create a free developer account with **Imagga**, to get authorization header, which needs to be included in each and every HTTP request so that only people with an account can use their services.
 
 [Show **Imagga**'s signup and dashboard page]
 
@@ -119,7 +119,7 @@ completion: { [weak self] result in
 }
 ```
 
-Next, go back to `upload(image:progressCompletion:completion:)` function and add **Alamofire** upload function call, set the API endpoint. Make sure to replace `Basic xxx` with the actual authorization header taken from the **Imagga** dashboard.
+Next, go back to `upload(image:progressCompletion:completion:)` function and add **Alamofire** upload function call, set the **Imagga** API endpoint with `Authorization` header. Make sure to replace `Basic xxx` with the actual authorization header taken from the **Imagga** dashboard.
 Here we convert the `JPEG` data blob (imageData) into a `MIME` multipart request to send to the **Imagga** content endpoint.
 
 ```
@@ -203,7 +203,7 @@ completion(true)
 Every response has a Result enum with a value and type. Using automatic validation, the result is considered a success when it returns a valid `HTTP Code` between `200 and 299` and the Content Type is of a valid type specified in the `Accept HTTP` header field.
 
 ## Demo 4
-You can perform manual validation by adding `.validate`:
+You can perform manual validation by adding `.validate` options like this:
 
 ```
 Alamofire.request("https://httpbin.org/get", parameters: ["foo": "bar"])
@@ -231,4 +231,4 @@ At this point, you should understand how to upload files using **Alamofire**, ha
 
 There's a lot more to **Alamofire** - including **Parameter encoding**, **Authentication**, **Routing Requests**, and more which I'll be covering in other screencasts, so be sure to keep an eye out for those.
 
-Thanks for watching - and I look forward to see your some wire blowing with **Alamofire**.
+Thanks for watching - and I look forward to see your some wire blowing with **Alamofire**!.
