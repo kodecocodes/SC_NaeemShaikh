@@ -6,7 +6,7 @@
 
 ## Screencast Description
 
-Uploading files using **Alamofire**, a very popular Swift-based HTTP networking library for iOS, MacOS, watchOS and tvOS.
+Uploading files using **Alamofire**, a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS.
 
 ## Language, Editor and Platform versions used in this screencast:
 
@@ -16,7 +16,7 @@ Uploading files using **Alamofire**, a very popular Swift-based HTTP networking 
 
 ## Introduction
 
-Hey what's up everybody, this is Naeem. In today's screencast, I'm going to introduce you to a really popular networking library called **Alamofire**.
+Hey what's up everybody, this is Naeem. In today's screencast, I'm going to introduce you to a very popular networking library called **Alamofire**.
 
 **Alamofire** is a Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by **Alamofire Software Foundation**.
 
@@ -37,13 +37,14 @@ Uploading files using **Alamofire** is super easy, so lets blow some wire with *
 ## Demo 1
 
 First of all, we need to import **Alamofire** into our project. so lets do that.
+There are 4 types of installation options available to integrate `Alamofire`, among them we have used `CocoaPods`.
 
 ```
 // 1
 import Alamofire
 ```
 
-Next, we will create a function called `upload` to upload files, which takes `UIImage` as input parameter and returns file upload progress with completion block.
+Next, we will create a function called `upload` to upload files, which takes `UIImage` as input parameter and returns file uploading progress with completion block.
 
 ```
 // 2
@@ -53,13 +54,19 @@ func upload(image: UIImage,
 }
 ```
 
-## Interlude
+## Interlude 1
 
 For this screencast, we are using a third-party image upload service called **Imagga**.
 
 You’ll need to create a free developer account with **Imagga**, to get authorization header, which needs to be included in each HTTP request so that only people with an account can use their services.
 
-Go to: `https://imagga.com/auth/signup/hacker`, fill out the form, and list down `Authorization` token to somewhere.
+[Show **Imagga**'s signup and dashboard page]
+
+Go to: `https://imagga.com/auth/signup/hacker`, fill out the form, and list down `Authorization` token to somewhere, which we use later.
+
+We are using **Imagga**’s `content` endpoint to upload the photos, there are other endpoints also like `tagging` endpoint for the image recognition and `colors` endpoint for color identification.
+
+You can read all about the **Imagga** API at `http://docs.imagga.com`.
 
 ## Demo 2
 
@@ -114,6 +121,7 @@ completion: { [weak self] result in
 
 Next, go back to `upload(image:progressCompletion:completion:)` function and add **Alamofire** upload function call, set the API endpoint. Make sure to replace `Basic xxx` with the actual authorization header taken from the **Imagga** dashboard.
 Here we convert the `JPEG` data blob (imageData) into a `MIME` multipart request to send to the **Imagga** content endpoint.
+
 ```
 // 8
 Alamofire.upload(
@@ -128,14 +136,9 @@ Alamofire.upload(
   encodingCompletion: { encodingResult in
 })
 ```
-## Interlude
 
-We using **Imagga**’s `content` endpoint to upload the photos, there are other endpoints also like `tagging` endpoint for the image recognition and `colors` endpoint for color identification.
-
-You can read all about the **Imagga** API at `http://docs.imagga.com`.
-
-## Demo 4
 Next, we call the **Alamofire** upload function and passes in a small calculation to update the progress bar as the file uploads, It then validates the response has a status code in the default acceptable range (between 200 and 299).
+
 ```
 // 9
 switch encodingResult {
@@ -151,7 +154,7 @@ case .failure(let encodingError):
 }
 ```
 
-## Interlude
+## Interlude 2
 
 Prior to **Alamofire 4** it was not guaranteed progress callbacks were called on the main queue. Starting with **Alamofire 4** the new progress callback API is always called on the main queue.
 
@@ -196,7 +199,7 @@ print("Content uploaded with ID: \(firstFileID)")
 completion(true)
 ```
 
-## Interlude
+## Interlude 3
 Every response has a Result enum with a value and type. Using automatic validation, the result is considered a success when it returns a valid `HTTP Code` between `200 and 299` and the Content Type is of a valid type specified in the `Accept HTTP` header field.
 
 ## Demo 4
