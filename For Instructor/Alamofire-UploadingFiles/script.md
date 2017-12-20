@@ -6,7 +6,7 @@
 
 ## Screencast Description
 
-Uploading files using **Alamofire**, a very popular Swift-based HTTP networking library for iOS.
+Uploading files using **Alamofire**, a very popular Swift-based HTTP networking library for iOS, MacOS, watchOS and tvOS.
 
 ## Language, Editor and Platform versions used in this screencast:
 
@@ -18,11 +18,11 @@ Uploading files using **Alamofire**, a very popular Swift-based HTTP networking 
 
 Hey what's up everybody, this is Naeem. In today's screencast, I'm going to introduce you to a really popular networking library called **Alamofire**.
 
-**Alamofire** is a Swift-based HTTP networking library for iOS, MacOS, watchOS and tvOS, it is created by **Alamofire Software Foundation**.
+**Alamofire** is a Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by **Alamofire Software Foundation**.
 
 There's a lot to like about **Alamofire**. It provides an elegant interface on top of Apple’s Foundation networking stack that simplifies a number of common networking tasks.
 
-It has all the features you'd expect in a networking library including chainable request/response methods, JSON parameter and response serialization, authentication, and many other features.
+It has all the features you'd expect in a networking library including chainable request/response methods, JSON parameter and response serialization, authentication, and many more.
 
 Its elegance comes from the fact it was written from the ground up in Swift and does not inherit anything from its Objective-C counterpart, **AFNetworking**.
 
@@ -31,6 +31,7 @@ And at the time of making this screencast, **Alamofire** appears to be the most 
 Before we get started, I want to give a big shout out to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
 
 [Show some LAN cable or wire]
+
 Uploading files using **Alamofire** is super easy, so lets blow some wire with **Alamofire**!
 
 ## Demo 1
@@ -42,7 +43,7 @@ First of all, we need to import **Alamofire** into our project. so lets do that.
 import Alamofire
 ```
 
-Next, we will create a function called `upload` to upload files, which takes UIImage is input
+Next, we will create a function called `upload` to upload files, which takes `UIImage` as input parameter and returns file upload progress with completion block.
 
 ```
 // 2
@@ -58,7 +59,7 @@ For this screencast, we are using a third-party image upload service called **Im
 
 You’ll need to create a free developer account with **Imagga**, to get authorization header, which needs to be included in each HTTP request so that only people with an account can use their services.
 
-Go to: `https://imagga.com/auth/signup/hacker`, fill out the form. And list down `Authorization` token to somewhere.
+Go to: `https://imagga.com/auth/signup/hacker`, fill out the form, and list down `Authorization` token to somewhere.
 
 ## Demo 2
 
@@ -72,11 +73,11 @@ guard let imageData = UIImageJPEGRepresentation(image, 0.5) else {
 }
 ```
 
-Next, we need to call `upload` function from `UIImagePickerController`s delegate method.
+Next, we need to call `upload` function from `UIImagePickerController`'s delegate method.
 
 ```
 // 4
-upload(image: <#T##UIImage#>, progressCompletion: <#T##(Float) -> Void#>, completion: <#T##(Bool) -> Void#>)
+upload(image: UIImage, progressCompletion: (Float) -> Void, completion: (Bool) -> Void)
 ```
 
 Everything with **Alamofire** is asynchronous, which means you’ll update the UI in an asynchronous manner:
@@ -127,7 +128,13 @@ Alamofire.upload(
   encodingCompletion: { encodingResult in
 })
 ```
+## Interlude
 
+We using **Imagga**’s `content` endpoint to upload the photos, there are other endpoints also like `tagging` endpoint for the image recognition and `colors` endpoint for color identification.
+
+You can read all about the **Imagga** API at `http://docs.imagga.com`.
+
+## Demo 4
 Next, we call the **Alamofire** upload function and passes in a small calculation to update the progress bar as the file uploads, It then validates the response has a status code in the default acceptable range (between 200 and 299).
 ```
 // 9
