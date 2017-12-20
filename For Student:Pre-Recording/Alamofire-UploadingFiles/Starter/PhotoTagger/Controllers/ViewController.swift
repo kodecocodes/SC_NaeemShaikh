@@ -90,18 +90,27 @@ extension ViewController: UIImagePickerControllerDelegate {
     // 4
     //upload(image: <#T##UIImage#>, progressCompletion: <#T##(Float) -> Void#>, completion: <#T##(Bool) -> Void#>)
     
-    // 5
     upload(
       image: image,
+      // 5
       progressCompletion: { [weak self] percent in
         guard let strongSelf = self else {
           return
         }
+        
+        strongSelf.progressView.setProgress(percent, animated: true)
       },
+      // 6
       completion: { [weak self] result in
         guard let strongSelf = self else {
           return
         }
+        
+        // 7
+        strongSelf.takePictureButton.isHidden = false
+        strongSelf.progressView.isHidden = true
+        strongSelf.activityIndicatorView.stopAnimating()
+        strongSelf.imageView.image = nil
     })
     
     dismiss(animated: true)
@@ -117,8 +126,8 @@ extension ViewController {
 
   // 2
   func upload(image: UIImage,
-              progressCompletion: (_ percent: Float) -> Void,
-              completion: (_ result: Bool) -> Void) {
+              progressCompletion: @escaping (_ percent: Float) -> Void,
+              completion: @escaping (_ result: Bool) -> Void) {
     
     // 3
     guard let imageData = UIImageJPEGRepresentation(image, 0.5) else {
@@ -126,7 +135,51 @@ extension ViewController {
       return
     }
     
+    // 8
+    Alamofire.upload(
+      multipartFormData: { multipartFormData in
+      multipartFormData.append(imageData,
+                               withName: "imageFile",
+                               fileName: "image.jpg",
+                               mimeType: "image/jpeg")
+    },
+      to: "http://api.imagga.com/v1/content",
+      headers: ["Authorization": "Basic YWNjX2E3MjAyMDgwODdhZTZiODphZWY5N2EyZjM3NzExYmE2ZDhhZjFmMDMzOTFkMGJmYw=="],
+      encodingCompletion: { encodingResult in
+        
+        // 9
+        switch encodingResult {
+        case .success(let upload, _, _):
+          upload.uploadProgress { progress in
+            progressCompletion(Float(progress.fractionCompleted))
+          }
+          upload.validate()
+          upload.responseJSON { response in
+            
+            // 10
+            guard response.result.isSuccess else {
+              print("Error while uploading file: \(String(describing: response.result.error))")
+              completion(false)
+              return
+            }
+            
+            // 11
+            guard let responseJSON = response.result.value as? [String: Any],
+              let uploadedFiles = responseJSON["uploaded"] as? [Any],
+              let firstFile = uploadedFiles.first as? [String: Any],
+              let firstFileID = firstFile["id"] as? String else {
+                print("Invalid information received from service")
+                completion(false)
+                return
+            }
+            
+            // 12
+            print("Content uploaded with ID: \(firstFileID)")
+            completion(true)
+          }
+        case .failure(let encodingError):
+          print(encodingError)
+        }
+    })
   }
 }
-
-
