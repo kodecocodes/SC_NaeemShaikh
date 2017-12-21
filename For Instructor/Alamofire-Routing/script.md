@@ -20,6 +20,8 @@ Refactoring code duplication and provide centralized configuration for **Alamofi
 
 **Alamofire** is a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by **Alamofire Software Foundation**.
 
+Probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs.
+
 As apps grow in size, it's important to adopt common patterns as you build out your network stack. An important part of that design is how to route your requests. The **Alamofire** `URLConvertible` and `URLRequestConvertible` protocols along with the Router design pattern are here to help.
 
 We are going to use `URLRequestConvertible` protocol in this screencast for refactoring networking calls.
@@ -219,6 +221,18 @@ Alamofire.request(ImaggaRouter.colors(contentID))
 ```
 
 Build and run for the final time; everything should function just as before, which means you've refactored everything without breaking your app. Awesome job!
+
+## Interlude
+
+If you want even more cleaner type safe routing in your networking stack apart from what **Alamofire** provides, than check out **Moya** and **AlamofireURLRequestConfigurable** libraries.
+
+**Moya** is built to create a network abstraction layer that sufficiently encapsulates actually calling **Alamofire** directly.
+You can find all about **Moya** at their GitHub repository: ``` https://github.com/Moya/Moya ```
+
+**AlamofireURLRequestConfigurable** is a replacement for **Alamofire**'s `URLRequestConvertible` protocol.
+You can find all about **AlamofireURLRequestConfigurable** at their GitHub repository: ``` https://github.com/gmarm/AlamofireURLRequestConfigurable ```
+
+Maybe we'll cover up these in more details on our future screencasts, so stay tuned to: ``` https://www.raywenderlich.com ```
 
 ## Closing
 
