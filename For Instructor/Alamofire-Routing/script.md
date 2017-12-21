@@ -18,7 +18,11 @@ Refactoring code duplication and provide centralized configuration for **Alamofi
 
 "Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show you how to refactor code duplication and provide centralized configuration for **Alamofire** network calls."
 
+**Alamofire** is a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by **Alamofire Software Foundation**.
+
 As apps grow in size, it's important to adopt common patterns as you build out your network stack. An important part of that design is how to route your requests. The **Alamofire** `URLConvertible` and `URLRequestConvertible` protocols along with the Router design pattern are here to help.
+
+We are going to use `URLRequestConvertible` protocol in this screencast for refactoring networking calls.
 
 Before we get started, I want to give a big shout out to Aaron Douglas. Aaron wrote a tutorial on Alamofire which is the basis of this screencast. Thanks Aaron.
 
@@ -50,21 +54,17 @@ Alamofire.request(
   parameters: ["content": contentID],
   headers: ["Authorization": "Basic xxx"]
   )
-  .responseJSON { response in
-}
 ```
 
 Download Colors function:
 ```
-func downloadColors(contentID: String, completion: @escaping ([PhotoColor]) -> Void) {
-  Alamofire.request(
+Alamofire.request(
     "http://api.imagga.com/v1/colors",
     parameters: ["content": contentID],
     headers: ["Authorization": "Basic xxx"]
     )
-    .responseJSON { response in
-}
 ```
+
 If any URL among this functions changes, you'd have to update the URL in each of the three methods. Similarly, if your `Authorization` token changed you'd be updating it all over the place.
 
 **Alamofire** provides a simple method to eliminate this code duplication and provide centralized configuration. The technique involves creating a struct conforming to the `URLRequestConvertible` protocol and updating your networking calls.
