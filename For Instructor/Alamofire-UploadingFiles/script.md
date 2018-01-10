@@ -229,6 +229,6 @@ Allright, that's everything I'd like to cover in this screencast.
 
 At this point, you should understand how to upload files using **Alamofire**, handling **Alamofire**'s asynchronous states for UI updates,  basic JSON parsing, and response validation.
 
-There's a lot more to **Alamofire** - including **Parameter encoding**, **Authentication**, **Routing Requests**, and more which I'll be covering in other screencasts, so be sure to keep an eye out for those.
+There's a lot more to **Alamofire** - including **Parameter encoding**, **Authentication**, **Routing Requests**. Please let me know if you like this screencast and if you'd like to see more on Alamofire.
 
 Thanks for watching - and I look forward to see your some wire blowing with **Alamofire**!.

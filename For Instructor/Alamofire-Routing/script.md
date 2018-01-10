@@ -16,13 +16,13 @@ Refactoring code duplication and provide centralized configuration for **Alamofi
 
 ## Introduction
 
-"Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show you how to refactor code duplication and provide centralized configuration for **Alamofire** network calls."
+Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show you how to avoid code duplication and provide centralized configuration for **Alamofire** network calls.
 
-**Alamofire** is a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by **Alamofire Software Foundation**.
+**Alamofire** is a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by the **Alamofire Software Foundation**.
 
-Probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs.
+This screencast is for developers who have experience using **Alamofire** in their apps. For those that have, probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs. [TODO: Can you add more detail here, or an example, of what you mean by "mess", and what you mean by "every new version of APIs? I want to make sure the problem is clear.]
 
-As apps grow in size, it's important to adopt common patterns as you build out your network stack. An important part of that design is how to route your requests. The **Alamofire** `URLConvertible` and `URLRequestConvertible` protocols along with the Router design pattern are here to help.
+As apps grow in size, it's important to adopt common patterns as you build out your network stack. An important part of that design is how to route your requests. The **Alamofire** `URLConvertible` and `URLRequestConvertible` protocols along with the Router design pattern are here to help. [TODO: How do they help, what is their benefit?]
 
 We are going to use `URLRequestConvertible` protocol in this screencast for refactoring networking calls.
 
@@ -232,7 +232,6 @@ You can find all about **Moya** at their GitHub repository: ``` https://github.c
 **AlamofireURLRequestConfigurable** is a replacement for **Alamofire**'s `URLRequestConvertible` protocol.
 You can find all about **AlamofireURLRequestConfigurable** at their GitHub repository: ``` https://github.com/gmarm/AlamofireURLRequestConfigurable ```
 
-Maybe we'll cover up these in more details on our future screencasts, so stay tuned to: ``` https://www.raywenderlich.com ```
 
 ## Closing
 
@@ -240,6 +239,6 @@ Allright, that's everything I'd like to cover in this screencast.
 
 At this point, you should understand how to refactor boilerplate code without breaking your app, create enum conforming to `URLRequestConvertible` protocol, ensuring consistency of requested endpoints, abstract away server-side inconsistencies and provide type-safe routing.
 
-There's a lot more to **Alamofire** - including **chainable request/response methods**, **Parameter encoding**, **Authentication**, and more which I'll be covering in other screencasts, so be sure to keep an eye out for those.
+There's a lot more to **Alamofire** - including **Parameter encoding**, **Authentication**, **Routing Requests**. Please let me know if you like this screencast and if you'd like to see more on Alamofire.
 
-Thanks for watching!
+[TODO: Insert joke here]
