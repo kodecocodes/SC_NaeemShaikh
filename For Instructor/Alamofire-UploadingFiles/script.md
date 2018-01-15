@@ -18,13 +18,13 @@ Uploading files using **Alamofire**, a very popular Swift-based HTTP networking 
 
 Hey what's up everybody, this is Naeem. In today's screencast, I'm going to introduce you to a very popular networking library called **Alamofire**.
 
-**Alamofire** is a Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by **Alamofire Software Foundation**.
+**Alamofire** is a Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by the **Alamofire Software Foundation**.
 
 There's a lot to like about **Alamofire**. It provides an elegant interface on top of Apple’s Foundation networking stack that simplifies a number of common networking tasks.
 
-It has all the features you'd expect in a networking library including chainable request/response methods, JSON parameter and response serialization, authentication, and many more.
+It has all the features you'd expect in a networking library including chainable request/response methods, JSON parameter,  response serialization, authentication, and many more.
 
-Its elegance comes from the fact it was written from the ground up in Swift and does not inherit anything from its Objective-C counterpart, **AFNetworking**.
+Its elegance comes from the fact, it was written from the ground up in Swift and does not inherit anything from its Objective-C counterpart, **AFNetworking**.
 
 And at the time of making this screencast, **Alamofire** appears to be the most commonly used Swift-based networking library. So I'm excited to show it to you today!
 

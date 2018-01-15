@@ -20,17 +20,13 @@ Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show
 
 **Alamofire** is a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by the **Alamofire Software Foundation**.
 
-This screencast is for developers who have experience using **Alamofire** in their apps. For those that have, probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs. [TODO: Can you add more detail here, or an example, of what you mean by "mess", and what you mean by "every new version of APIs? I want to make sure the problem is clear.]
+This screencast is for developers who have experience using **Alamofire** in their apps. For those that have, probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs. Let's have look on an example **Alamofire**
 
-As apps grow in size, it's important to adopt common patterns as you build out your network stack. An important part of that design is how to route your requests. The **Alamofire** `URLConvertible` and `URLRequestConvertible` protocols along with the Router design pattern are here to help. [TODO: How do they help, what is their benefit?]
+[TODO: Can you add more detail here, or an example, of what you mean by "mess", and what you mean by "every new version of APIs? I want to make sure the problem is clear.]
 
-We are going to use `URLRequestConvertible` protocol in this screencast for refactoring networking calls.
+## Display Demo [Example of "mess" and "new version APIs" change issue]
 
-Before we get started, I want to give a big shout out to Aaron Douglas. Aaron wrote a tutorial on Alamofire which is the basis of this screencast. Thanks Aaron.
-
-Refactoring repeated code in **Alamofire** is super easy, so let's dive in.
-
-## Demo 1
+[Note: This functions are already written up as a part of pre-requisite in the code, so no need to write it down, just need to focus on this functions on video editing.]
 
 In our screencast demo we have 3 **Alamofire** networking function with hardcoded URL, API endpoints with common `Authorization` token.
 
@@ -58,7 +54,7 @@ Alamofire.request(
   )
 ```
 
-Download Colors function:
+And Download Colors function:
 ```
 Alamofire.request(
     "http://api.imagga.com/v1/colors",
@@ -70,6 +66,14 @@ Alamofire.request(
 If any URL among this functions changes, you'd have to update the URL in each of the three methods. Similarly, if your `Authorization` token changed you'd be updating it all over the place.
 
 **Alamofire** provides a simple method to eliminate this code duplication and provide centralized configuration. The technique involves creating a struct conforming to the `URLRequestConvertible` protocol and updating your networking calls.
+
+## Introduction [Continue]
+
+Before we get started, I want to give a big shout out to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
+
+Refactoring repeated code in **Alamofire** is super easy, so let's do that.
+
+## Demo 2
 
 First of all, create a new Swift file by clicking `File\New\File...` and selecting `Swift file` under `iOS`. Click Next, name the file `ImaggaRouter.swift`, select the Group `Services` with the yellow folder icon and click `Create`.
 
@@ -241,4 +245,12 @@ At this point, you should understand how to refactor boilerplate code without br
 
 There's a lot more to **Alamofire** - including **Parameter encoding**, **Authentication**, **Routing Requests**. Please let me know if you like this screencast and if you'd like to see more on Alamofire.
 
-[TODO: Insert joke here]
+Q. How do you catch an Ether Bunny.
+A. With an Ethernet!!
+@etherealmind
+
+[Show some LAN cable]
+
+Okay, I'm out.
+
+Thanks for watching - and I look forward to see your some catching Ether Bunny with **Alamofire**!.
