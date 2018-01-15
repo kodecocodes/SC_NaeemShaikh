@@ -20,7 +20,7 @@ Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show
 
 **Alamofire** is a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by the **Alamofire Software Foundation**.
 
-This screencast is for developers who have experience using **Alamofire** in their apps. For those that have, probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs. Let's have look on an example **Alamofire**
+This screencast is for developers who have experience using **Alamofire** in their apps. For those that have, probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs. Let's have a look on an examples of **Alamofire** networking stack having code duplication, which creates mess on every API changes.
 
 [Note: This functions are already written up as a part of pre-requisite in the code, so no need to write it down, just need to focus on this functions on video editing.]
 
