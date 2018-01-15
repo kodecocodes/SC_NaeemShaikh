@@ -22,10 +22,6 @@ Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show
 
 This screencast is for developers who have experience using **Alamofire** in their apps. For those that have, probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs. Let's have look on an example **Alamofire**
 
-[TODO: Can you add more detail here, or an example, of what you mean by "mess", and what you mean by "every new version of APIs? I want to make sure the problem is clear.]
-
-## Display Demo [Example of "mess" and "new version APIs" change issue]
-
 [Note: This functions are already written up as a part of pre-requisite in the code, so no need to write it down, just need to focus on this functions on video editing.]
 
 In our screencast demo we have 3 **Alamofire** networking function with hardcoded URL, API endpoints with common `Authorization` token.
@@ -67,13 +63,11 @@ If any URL among this functions changes, you'd have to update the URL in each of
 
 **Alamofire** provides a simple method to eliminate this code duplication and provide centralized configuration. The technique involves creating a struct conforming to the `URLRequestConvertible` protocol and updating your networking calls.
 
-## Introduction [Continue]
-
 Before we get started, I want to give a big shout out to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
 
-Refactoring repeated code in **Alamofire** is super easy, so let's do that.
+Avoiding code duplication in **Alamofire** is super easy, so let's do that before Spectre and Meltdown snatch away your passwords.
 
-## Demo 2
+## Demo 1
 
 First of all, create a new Swift file by clicking `File\New\File...` and selecting `Swift file` under `iOS`. Click Next, name the file `ImaggaRouter.swift`, select the Group `Services` with the yellow folder icon and click `Create`.
 
