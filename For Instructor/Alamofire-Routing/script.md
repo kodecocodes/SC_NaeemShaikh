@@ -20,7 +20,9 @@ Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show
 
 **Alamofire** is a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by the **Alamofire Software Foundation**.
 
-This screencast is for developers who have experience using **Alamofire** in their apps. For those that have, probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs. Let's have a look on an examples of **Alamofire** networking stack having code duplication, which creates mess on every API changes.
+This screencast is for developers who have experience using **Alamofire** in their apps. For those that have, probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs.
+
+Let's have a look on the examples of **Alamofire** networking stack which has code duplication, that creates chaos on every API changes.
 
 [Note: This functions are already written up as a part of pre-requisite in the code, so no need to write it down, just need to focus on this functions on video editing.]
 
@@ -65,7 +67,7 @@ If any URL among this functions changes, you'd have to update the URL in each of
 
 Before we get started, I want to give a big shout out to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
 
-Avoiding code duplication in **Alamofire** is super easy, so let's do that before Spectre and Meltdown snatch away your passwords.
+Avoiding code duplication in **Alamofire** is super easy, so let's do that before **Spectre and Meltdown** snatches away my passwords.
 
 ## Demo 1
 
@@ -239,12 +241,12 @@ At this point, you should understand how to refactor boilerplate code without br
 
 There's a lot more to **Alamofire** - including **Parameter encoding**, **Authentication**, **Routing Requests**. Please let me know if you like this screencast and if you'd like to see more on Alamofire.
 
+[Show some LAN cable]
+
 Q. How do you catch an Ether Bunny.
 A. With an Ethernet!!
 @etherealmind
 
-[Show some LAN cable]
-
 Okay, I'm out.
 
-Thanks for watching - and I look forward to see your some catching Ether Bunny with **Alamofire**!.
+Thanks for watching - and I look forward to see you some, catching Ether Bunny with **Alamofire**!.
