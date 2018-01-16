@@ -28,13 +28,17 @@ It is created by the **Alamofire Software Foundation**.
 
 There's a lot to like about **Alamofire**. It provides an elegant interface on top of Apple’s Foundation networking stack that simplifies a number of common networking tasks.
 
-It has all the features you'd expect in a networking library including **Parameter encoding**, **Response Serialization**, **Authentication**, and many more.
+It has all the features you'd expect in a networking library including,
+- **Parameter encoding**,
+- **Response Serialization**,
+- **Authentication**,
+- and many more.
 
-Its elegance comes from the fact that, it is written up in Swift and does not inherit anything from its Objective-C counterpart, **AFNetworking**.
+Its elegance comes from the fact that, it is written up in Swift from the very beginning and does not inherit anything from its Objective-C counterpart, **AFNetworking**.
 
 And at the time of making this screencast, **Alamofire** appears to be the most commonly used Swift-based networking library.
 
-Soooo, I'm very excited to show you today!
+Soooo, I'm very much excited to show you it today!
 
 Before we get started, I wanna give a big thanks to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
 
