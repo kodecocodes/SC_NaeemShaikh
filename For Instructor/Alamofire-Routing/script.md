@@ -18,17 +18,23 @@ Refactoring code duplication and provide centralized configuration for **Alamofi
 
 Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show you how to avoid code duplication and provide centralized configuration for **Alamofire** network calls.
 
-**Alamofire** is a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by the **Alamofire Software Foundation**.
+**Alamofire** is a popular networking library written up in Swift for,
+- iOS,
+- macOS,
+- watchOS,
+- and tvOS.
+
+It is created by the **Alamofire Software Foundation**.
 
 This screencast is for developers who have experience using **Alamofire** in their apps. For those that have, probably you have created `APIManager` or `NetworkModel` of your apps using **Alamofire**, which ends up in a mess on every new version of APIs.
 
-Let's have a look on the examples of **Alamofire** networking stack which has code duplication, that creates chaos on every API changes.
+Let's have a look on the examples of **Alamofire** networking stack which has code duplication, that ends up in a mess on every API changes.
 
 [Note: This functions are already written up as a part of pre-requisite in the code, so no need to write it down, just need to focus on this functions on video editing.]
 
 In our screencast demo we have 3 **Alamofire** networking function with hardcoded URL, API endpoints with common `Authorization` token.
 
-Upload function:
+1 - Upload function:
 ```
 Alamofire.upload(
   multipartFormData: { multipartFormData in
@@ -43,7 +49,7 @@ Alamofire.upload(
 })
 ```
 
-Download Tags function:
+2 - Download Tags function:
 ```
 Alamofire.request(
   "http://api.imagga.com/v1/tagging",
@@ -52,7 +58,7 @@ Alamofire.request(
   )
 ```
 
-And Download Colors function:
+And 3 - Download Colors function:
 ```
 Alamofire.request(
     "http://api.imagga.com/v1/colors",
@@ -61,13 +67,15 @@ Alamofire.request(
     )
 ```
 
-If any URL among this functions changes, you'd have to update the URL in each of the three methods. Similarly, if your `Authorization` token changed you'd be updating it all over the place.
+If any URL among this functions changes, you'd have to update them in each of the three methods. Similarly, if your `Authorization` token changes you'd be updating it all over the place.
 
 **Alamofire** provides a simple method to eliminate this code duplication and provide centralized configuration. The technique involves creating a struct conforming to the `URLRequestConvertible` protocol and updating your networking calls.
 
-Before we get started, I want to give a big shout out to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
+Before we get started, I wanna give a big thanks to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
 
-Avoiding code duplication in **Alamofire** is super easy, so let's do that before **Spectre and Meltdown** snatches away my passwords.
+Avoiding code duplication in **Alamofire** is super easy, so let's do that before **Spectre and Meltdown** snatch away my passwords.
+
+Let's dive in.
 
 ## Demo 1
 
@@ -224,26 +232,37 @@ Build and run for the final time; everything should function just as before, whi
 
 ## Interlude
 
-If you want even more cleaner type safe routing in your networking stack apart from what **Alamofire** provides, than check out **Moya** and **AlamofireURLRequestConfigurable** libraries.
+If you want even more cleaner type safe routing in your networking stack apart from what **Alamofire** provides, than check out.
+- **Moya**
+- and **AlamofireURLRequestConfigurable** libraries.
 
 **Moya** is built to create a network abstraction layer that sufficiently encapsulates actually calling **Alamofire** directly.
-You can find all about **Moya** at their GitHub repository: ``` https://github.com/Moya/Moya ```
+You can find all about **Moya** in their GitHub repository: ``` https://github.com/Moya/Moya ```
 
 **AlamofireURLRequestConfigurable** is a replacement for **Alamofire**'s `URLRequestConvertible` protocol.
-You can find all about **AlamofireURLRequestConfigurable** at their GitHub repository: ``` https://github.com/gmarm/AlamofireURLRequestConfigurable ```
+You can find all about **AlamofireURLRequestConfigurable** in their GitHub repository: ``` https://github.com/gmarm/AlamofireURLRequestConfigurable ```
 
 
 ## Closing
 
 Allright, that's everything I'd like to cover in this screencast.
 
-At this point, you should understand how to refactor boilerplate code without breaking your app, create enum conforming to `URLRequestConvertible` protocol, ensuring consistency of requested endpoints, abstract away server-side inconsistencies and provide type-safe routing.
+At this point, you should understanding of,
+- how to refactor boilerplate code without breaking your app,
+- create enum conforming to `URLRequestConvertible` protocol,
+- ensuring consistency of requested endpoints,
+- abstract away server-side inconsistencies
+- and provide type-safe routing.
 
-There's a lot more to **Alamofire** - including **Parameter encoding**, **Authentication**, **Routing Requests**. Please let me know if you like this screencast and if you'd like to see more on Alamofire.
+There's a lot more to **Alamofire** - including,
+- **Parameter encoding**,
+- **Authentication**,
+- and **Routing Requests**.
 
-[Show some LAN cable]
+Please let me know if you like this screencast and if you'd like to see more on Alamofire.
 
 Q. How do you catch an Ether Bunny.
+[Show some LAN cable]
 A. With an Ethernet!!
 @etherealmind
 

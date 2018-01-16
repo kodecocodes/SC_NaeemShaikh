@@ -16,23 +16,31 @@ Uploading files using **Alamofire**, a very popular Swift-based HTTP networking 
 
 ## Introduction
 
-Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show you how to upload a file using a very popular networking library called **Alamofire**.
+Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show you how to upload a file using **Alamofire**.
 
-**Alamofire** is a Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by the **Alamofire Software Foundation**.
+**Alamofire** is a popular networking library written up in Swift for,
+- iOS,
+- macOS,
+- watchOS,
+- and tvOS.
+
+It is created by the **Alamofire Software Foundation**.
 
 There's a lot to like about **Alamofire**. It provides an elegant interface on top of Apple’s Foundation networking stack that simplifies a number of common networking tasks.
 
-It has all the features you'd expect in a networking library including chainable request/response methods, JSON parameter,  response serialization, authentication, and many more.
+It has all the features you'd expect in a networking library including **Parameter encoding**, **Response Serialization**, **Authentication**, and many more.
 
-Its elegance comes from the fact, it was written from the ground up in Swift and does not inherit anything from its Objective-C counterpart, **AFNetworking**.
+Its elegance comes from the fact that, it is written up in Swift and does not inherit anything from its Objective-C counterpart, **AFNetworking**.
 
-And at the time of making this screencast, **Alamofire** appears to be the most commonly used Swift-based networking library. So I'm excited to show it to you today!
+And at the time of making this screencast, **Alamofire** appears to be the most commonly used Swift-based networking library.
 
-Before we get started, I want to give a big shout out to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
+Soooo, I'm very excited to show you today!
+
+Before we get started, I wanna give a big thanks to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
 
 [Show some LAN cable or wire]
 
-Uploading files using **Alamofire** is super easy, so lets blow some wire with **Alamofire**!
+Uploading files using **Alamofire** is super easy, so lets blow up some wire with **Alamofire**!
 
 ## Demo 1
 
@@ -56,17 +64,17 @@ func upload(image: UIImage,
 
 ## Interlude 1
 
-For this screencast, we are using a third-party image upload service called **Imagga**.
+For this screencast, we are using a third-party image uploading service called, **Imagga**.
 
-You’ll need to create a free developer account with **Imagga**, to get authorization header, which needs to be included in each and every HTTP request so that only people with an account can use their services.
+You’ll need to create a free developer account with **Imagga**, to get authorization token, which needs to be included in each and every HTTP request, so that only people with an account can use their services.
 
 [Show **Imagga**'s signup and dashboard page]
 
 Go to: `https://imagga.com/auth/signup/hacker`, fill out the form, and list down `Authorization` token to somewhere, which we use later.
 
-We are using **Imagga**’s `content` endpoint to upload the photos, there are other endpoints also like `tagging` endpoint for the image recognition and `colors` endpoint for color identification.
+We are using **Imagga**’s `content` endpoint API to upload the photos, there are other API endpoints also like, `tagging` for the image recognition and `colors` for color identification.
 
-You can read all about the **Imagga** API at `http://docs.imagga.com`.
+You can read all about the **Imagga** APIs at `http://docs.imagga.com`.
 
 ## Demo 2
 
@@ -156,9 +164,9 @@ case .failure(let encodingError):
 
 ## Interlude 2
 
-Prior to **Alamofire 4** it was not guaranteed progress callbacks were called on the main queue. Starting with **Alamofire 4** the new progress callback API is always called on the main queue.
+Prior to **Alamofire 4**, it was not guaranteed that, progress callbacks were called on the main queue. Starting with **Alamofire 4** the new progress API callback is always called on the main queue.
 
-You can check more details on **Alamofire 4** migration guide:
+You can check more details on **Alamofire 4** migration guide at given link:
 ```
 https://github.com/Alamofire/Alamofire/blob/master/Documentation/Alamofire%204.0%20Migration%20Guide.md
 ```
@@ -200,7 +208,11 @@ completion(true)
 ```
 
 ## Interlude 3
-Every response has a Result enum with a value and type. Using automatic validation, the result is considered a success when it returns a valid `HTTP Code` between `200 and 299` and the Content Type is of a valid type specified in the `Accept HTTP` header field.
+Every response has a `Result` enum with a value and type.
+
+Using automatic validation, the result is considered a success when it returns a valid `HTTP Code` between `200 and 299`.
+
+And the Content Type is of a valid type specified in the `Accept HTTP` header field.
 
 ## Demo 4
 You can perform manual validation by adding `.validate` options like this:
@@ -227,8 +239,17 @@ Congratulations, you've successfully uploaded a file over the Interwebs!
 
 Allright, that's everything I'd like to cover in this screencast.
 
-At this point, you should understand how to upload files using **Alamofire**, handling **Alamofire**'s asynchronous states for UI updates,  basic JSON parsing, and response validation.
+At this point, you should have understanding of,
+- how to upload files using **Alamofire**,
+- handling **Alamofire**'s async states for UI updates,  
+- some basic JSON parsing,
+- and response validation.
 
-There's a lot more to **Alamofire** - including **Parameter encoding**, **Authentication**, **Routing Requests**. Please let me know if you like this screencast and if you'd like to see more on Alamofire.
+There's a lot more to **Alamofire** - including,
+- **Parameter encoding**,
+- **Authentication**,
+- and **Routing Requests**.
 
-Thanks for watching - and I look forward to see your some wire blowing with **Alamofire**!.
+Please let me know if you like this screencast and if you'd like to see more on Alamofire.
+
+Thanks for watching - and I look forward to see your some wire blowing up with **Alamofire**!.
