@@ -16,7 +16,7 @@ Uploading files using **Alamofire**, a very popular Swift-based HTTP networking 
 
 ## Introduction
 
-Hey what's up everybody, this is Naeem. In today's screencast, I'm going to introduce you to a very popular networking library called **Alamofire**.
+Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show you how to upload a file using a very popular networking library called **Alamofire**.
 
 **Alamofire** is a Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS, it is created by the **Alamofire Software Foundation**.
 
