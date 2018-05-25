@@ -6,7 +6,7 @@
 
 ## Screencast Description
 
-Uploading files using **Alamofire**, a very popular Swift-based HTTP networking library for iOS, macOS, watchOS and tvOS.
+**Alamofire** is a popular Swift-based HTTP networking library and in the screencast you'll learn how to use it to upload files.
 
 ## Language, Editor and Platform versions used in this screencast:
 
@@ -16,47 +16,26 @@ Uploading files using **Alamofire**, a very popular Swift-based HTTP networking 
 
 ## Introduction
 
-Hey what's up everybody, this is Naeem. In today's screencast, I'm going to show you how to upload a file using **Alamofire**.
+Hey what's up everybody, this is Brian and in today's screencast, I'm going to show you how to upload a file using **Alamofire**. Curious about Alamofire? This is third party framework that provides an elegant interface on top of Apple’s Foundation networking stack. Doing this, it simplifies a number of common networking tasks such as parameter encoding, response serialization, authentication, and more.
 
-**Alamofire** is a popular networking library written up in Swift for,
-- iOS,
-- macOS,
-- watchOS,
-- and tvOS.
+Its elegance comes from the fact that, it is written up in Swift from the very beginning and does not inherit anything from its Objective-C counterpart, **AFNetworking**. And at the time of making this screencast, **Alamofire** appears to be the most commonly used Swift-based networking library.
 
-It is created by the **Alamofire Software Foundation**.
+Before I get started, I wanna give a big thanks to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron. I also would like to thank Na-eem Shay-key who produced the materials for this screencast. When you have a moment, give them both a follow on Twitter. 
 
-There's a lot to like about **Alamofire**. It provides an elegant interface on top of Apple’s Foundation networking stack that simplifies a number of common networking tasks.
-
-It has all the features you'd expect in a networking library including,
-- **Parameter encoding**,
-- **Response Serialization**,
-- **Authentication**,
-- and many more.
-
-Its elegance comes from the fact that, it is written up in Swift from the very beginning and does not inherit anything from its Objective-C counterpart, **AFNetworking**.
-
-And at the time of making this screencast, **Alamofire** appears to be the most commonly used Swift-based networking library.
-
-Soooo, I'm very much excited to show you it today!
-
-Before we get started, I wanna give a big thanks to **Aaron Douglas**. Aaron wrote a tutorial on **Alamofire** which is the basis of this screencast. Thanks Aaron.
-
-[Show some LAN cable or wire]
-
-Uploading files using **Alamofire** is super easy, so lets blow up some wire with **Alamofire**!
+Let's dive in.
 
 ## Demo 1
 
-First of all, we need to import **Alamofire** into our project. so lets do that.
-There are 4 types of installation options available to integrate `Alamofire`, among them we have used `CocoaPods`.
+Getting started, I have a project that I want to upload files to a third party image service, Imagga. I've already created a free account and have the necessary credentials. The service requires that I provide each request with an authorization token. I'm storing this token as a string contstant called Authorization token which I'll send to the service when uploading. 
+
+To get started, I open ViewController.swift and import the Alamofire framework which I've already installed using cocoapods.  
 
 ```
 // 1
 import Alamofire
 ```
 
-Next, we will create a function called `upload` to upload files, which takes `UIImage` as input parameter and returns file uploading progress with completion block.
+Next, I will create a function called `upload` to upload files, which takes `UIImage` as an input parameter as well as a progress completion and regular completion closure. The progress completion is used to update a progress bar and the completion handler will be called when the upload concludes.
 
 ```
 // 2
@@ -66,23 +45,8 @@ func upload(image: UIImage,
 }
 ```
 
-## Interlude 1
 
-For this screencast, we are using a third-party image uploading service called, **Imagga**.
-
-You’ll need to create a free developer account with **Imagga**, to get authorization token, which needs to be included in each and every HTTP request, so that only people with an account can use their services.
-
-[Show **Imagga**'s signup and dashboard page]
-
-Go to: `https://imagga.com/auth/signup/hacker`, fill out the form, and list down `Authorization` token to somewhere, which we use later.
-
-We are using **Imagga**’s `content` endpoint API to upload the photos, there are other API endpoints also like, `tagging` for the image recognition and `colors` for color identification.
-
-You can read all about the **Imagga** APIs at `http://docs.imagga.com`.
-
-## Demo 2
-
-Now, The first step in uploading an image to **Imagga** is to get the image into the correct format for use with the API. So we need to convert `UIImage` instance into a `JPEG` Data instance.
+Now, The first step in uploading an image tis to get the image into the correct format for use with the API so I need to convert `UIImage` instance into a `JPEG` Data instance. To do this, I call UIImageJPEGRepresentation. 
 
 ```
 // 3
@@ -92,16 +56,16 @@ guard let imageData = UIImageJPEGRepresentation(image, 0.5) else {
 }
 ```
 
-Next, we need to call `upload` function from `UIImagePickerController`'s delegate method.
+Next, I need to call `upload` function from `UIImagePickerController`'s delegate didFinishPickingMediaWithInfo method.
 
 ```
 // 4
 upload(image: UIImage, progressCompletion: (Float) -> Void, completion: (Bool) -> Void)
 ```
 
-Everything with **Alamofire** is asynchronous, which means you’ll update the UI in an asynchronous manner:
+Everything with **Alamofire** is asynchronous, which means I'll need to update the UI in an asynchronous manner.
 
-1. While the file uploads, we call the progress handler with an updated percent. This updates the progress indicator of the progress bar.
+While the file uploads,  I call the progress handler with an updated percent. This updates the progress indicator of the progress bar.
 
 ```
 // 5
@@ -114,7 +78,7 @@ progressCompletion: { [weak self] percent in
 },
 ```
 
-2. The completion handler executes when the upload finishes. This sets the state of the controls back to their original state.
+The completion handler executes when the upload finishes. This sets the state of the controls back to their original state.
 
 ```
 // 6
@@ -130,9 +94,7 @@ completion: { [weak self] result in
   strongSelf.imageView.image = nil
 }
 ```
-
-Next, go back to `upload(image:progressCompletion:completion:)` function and add **Alamofire** upload function call, set the **Imagga** API endpoint with `Authorization` header. Make sure to replace `Basic xxx` with the actual authorization header taken from the **Imagga** dashboard.
-Here we convert the `JPEG` data blob (imageData) into a `MIME` multipart request to send to the **Imagga** content endpoint.
+And that's it. Everything is in place. The only thing left to call is use Alamofire. I go back to the `upload()` function and add an **Alamofire** upload function call. Here I convert the `JPEG` imageData into a `MIME` multipart request to send to the content endpoint. I set the  API endpoint with `Authorization` header. I'm using my own token variable but if you were connecting to your own account, you would put your authoziation token here. 
 
 ```
 // 8
@@ -149,7 +111,7 @@ Alamofire.upload(
 })
 ```
 
-Next, we call the **Alamofire** upload function and passes in a small calculation to update the progress bar as the file uploads, It then validates the response has a status code in the default acceptable range (between 200 and 299).
+Then, I pass in a small calculation to update the progress bar as the file uploads. After which, I call validate. This method makes sure that the response has a status code in the default accetable range. Next I have provide a closure for the responseJSON. More on this in a moment. And finally, I provide a failure case that simply prints out the error.
 
 ```
 // 9
@@ -166,20 +128,17 @@ case .failure(let encodingError):
 }
 ```
 
-## Interlude 2
+## Interlude
 
 Prior to **Alamofire 4**, it was not guaranteed that, progress callbacks were called on the main queue. Starting with **Alamofire 4** the new progress API callback is always called on the main queue.
 
 You can check more details on **Alamofire 4** migration guide at given link:
-```
-https://github.com/Alamofire/Alamofire/blob/master/Documentation/Alamofire%204.0%20Migration%20Guide.md
-```
 
-## Demo 3
+Now, for the JSON parsing. We'll be using SwiftyJSON which is included with the Alamfire framework. If you want to using Swift 4's native JSON parsing, check out the CodableAlamofire extension over at github.
 
-Now, it's time to get our hands dirty with some `JSON` parsing.
+## Demo
 
-1. Check if the response was successful; if not, print the error and call the completion handler.
+Back in our ViewController.swift, I want to write some code to validate my returned JSON. I do this in the responseJSON closure. The first thing to do is check if the response was successful.  if not, I print the error and call the completion handler with a false value.
 ```
 // 10
 guard response.result.isSuccess else{
@@ -189,7 +148,7 @@ guard response.result.isSuccess else{
 }
 ```
 
-2. Check each portion of the response, verifying the expected type is the actual type received. Retrieve the `firstFileID` from the response. If `firstFileID` cannot be resolved, print out an error message and call the completion handler.
+Next I check each portion of the response, verifying the expected type is the actual type received. I retrieve the `firstFileID` from the response. If the `firstFileID` cannot be resolved, I print out an error message and again, call the completion handler with a false value.
 
 ```
 // 11
@@ -203,7 +162,7 @@ guard let responseJSON = response.result.value as? [String: Any],
 }
 ```
 
-3. Print the uploaded `fileID` and call the completion handler to update the UI.
+Then I print the uploaded `fileID` and call the completion handler to update the UI.
 
 ```
 // 12
@@ -211,49 +170,14 @@ print("Content uploaded with ID: \(firstFileID)")
 completion(true)
 ```
 
-## Interlude 3
-Every response has a `Result` enum with a value and type.
-
-Using automatic validation, the result is considered a success when it returns a valid `HTTP Code` between `200 and 299`.
-
-And the Content Type is of a valid type specified in the `Accept HTTP` header field.
-
-## Demo 4
-You can perform manual validation by adding `.validate` options like this:
-
-```
-Alamofire.request("https://httpbin.org/get", parameters: ["foo": "bar"])
-  .validate(statusCode: 200..<300)
-  .validate(contentType: ["application/json"])
-  .response { response in
-    // response validation code
-}
-```
-
-Now, build and run your project; select an image and watch the progress bar change as the file uploads.
-You should see a note with uploaded `fileID` in your console when the upload completes:
+Now, I build and run my project. I select an image and watch the progress bar change as the file uploads. When completed, I can see a note in the consol when the upload completes:
 
 ```
 Content uploaded with ID: 6cda50de4521c42675cac5d269b2e87d
 ```
 
-Congratulations, you've successfully uploaded a file over the Interwebs!
+Now I'm cooking with Alamofire.
 
 ## Closing
 
-Allright, that's everything I'd like to cover in this screencast.
-
-At this point, you should have understanding of,
-- how to upload files using **Alamofire**,
-- handling **Alamofire**'s async states for UI updates,  
-- some basic JSON parsing,
-- and response validation.
-
-There's a lot more to **Alamofire** - including,
-- **Parameter encoding**,
-- **Authentication**,
-- and **Routing Requests**.
-
-Please let me know if you like this screencast and if you'd like to see more on Alamofire.
-
-Thanks for watching - and I look forward to see your some wire blowing up with **Alamofire**!.
+As you can see, Alamofire provides you with an API that's relatively easy to send data over the web. We can get informed of the upload progress and read the resulting JSON. All without having dig deep into Foundation networking stack. Alamofire also gives us the ability to chain request and response methods, authentication with url credential, network reachability and a whole lot more. To learn more about Alamofire, head over to the official alamofire github page and keep coming back to raywenderlich.com for more screencasts and tutorials on iOS development. They'll get you up to speed without setting you on fire. In an alamo. But don't quote me on that. Cheers!\
